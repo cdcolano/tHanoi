@@ -65,10 +65,11 @@ public class Dobleces {
 		long tiempoInicialLento=System.nanoTime();
 		int donde2= buscaEnVectorLento(buscado, array,0, array.length-1 );
 		long tiempoFinalLento=System.nanoTime();
-		System.out.println("tiempo rapido " + (tiempoFinal-tiempoInicial));
+	/*	System.out.println("tiempo rapido " + (tiempoFinal-tiempoInicial));
 		System.out.println("tiempo lento" + (tiempoFinalLento-tiempoInicialLento));
 		System.out.println("Encontrado "+ buscado + " en posicion "+ donde  );
 		System.out.println("Encontrado "+ buscado + " en posicion "+ donde2  );
+	*/ cadena(3, "A", "B", "");
 	}
 	
 	
@@ -128,6 +129,19 @@ public class Dobleces {
 		if (num%2==0)return true;
 		else{
 			return false;
+		}
+	}
+	
+	
+	//necesito saber cuantos caracteres
+	public static void cadena(int numCar, String i, String b, String cadenaPrevia) {
+		if (numCar==0) {
+			cadenaPrevia=cadenaPrevia+ "\n";
+			System.out.println(cadenaPrevia);
+		}else {
+			cadena(numCar-1, i, b,cadenaPrevia+ i );
+			cadena(numCar-1, i, b, cadenaPrevia+  b) ;
+			
 		}
 	}
 	
